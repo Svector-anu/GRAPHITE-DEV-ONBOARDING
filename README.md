@@ -1,26 +1,25 @@
 # Graphite Network Developer Hub
 
 <div align="center">
-<!--   <img src="/api/placeholder/500/150" alt="Graphite Network Logo" /> -->
   <h3>Everything you need to start building on Graphite Network</h3>
 </div>
 
 ## 👋 Welcome
 
-This repository contains essential tools, guides, and resources to help developers quickly get started with the Graphite Network. Whether you're an experienced blockchain developer or just getting started, this hub will help you navigate the Graphite ecosystem.
+Welcome to the Graphite Network Developer Hub! This repository provides essential tools, guides, and resources to help you quickly start building on the Graphite ecosystem. Whether you're an experienced blockchain developer or just beginning your journey, this hub will equip you with everything you need.
 
 ## 🚀 Quick Start
 
 ### 1. Connect to Graphite Network
 
-Add Graphite Network to your wallet with these network details:
+Add Graphite Network to your wallet using these network details:
 
 | Setting | Value |
 |---------|-------|
 | Network Name | Graphite Testnet |
-| RPC URL |https://anon-entrypoint-test-1.atgraphite.com  |
+| RPC URL | https://anon-entrypoint-test-1.atgraphite.com |
 | Chain ID | 54170 |
-| Currency Symbol |@G |
+| Currency Symbol | @G |
 | Block Explorer | test.atgraphite.com |
 
 <details>
@@ -31,7 +30,6 @@ Add Graphite Network to your wallet with these network details:
 3. Click "Add Network Manually"
 4. Fill in the network details above
 5. Click "Save"
-
 </details>
 
 ### 2. Get Test Tokens
@@ -51,14 +49,13 @@ git clone https://github.com/graphite-network/graphite-network-setup.git
 cd graphite-network-setup
 cp .env.example .env
 npm install
-
+```
 
 Edit your `.env` file:
 
 ```
 PRIVATE_KEY=your_private_key
 GRAPHITE_RPC_URL=https://anon-entrypoint-test-1.atgraphite.com
-
 ```
 
 > 🔒 **Security Note:** Never commit your private key to GitHub or share it publicly
@@ -101,7 +98,7 @@ getNetwork()
 
 ### Project Structure
 
-This repository includes:
+This repository is organized as follows:
 
 ```
 graphite-dev-hub/
@@ -119,27 +116,28 @@ graphite-dev-hub/
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Documentation | [docs.graphite.xyz](https://docs.atgraphite.com) | Official developer documentation |
-| Block Explorer | [test.atgraphite.com](test.atgraphite.com) | Search transactions, blocks and addresses |
-| Faucet | [https://faucet.atgraphite.com](https://faucet.atgraphite.com) | Get testnet tokens |
+| Documentation | [docs.atgraphite.com](https://docs.atgraphite.com) | Official developer documentation |
+| Block Explorer | [test.atgraphite.com](https://test.atgraphite.com) | Search transactions, blocks, and addresses |
+| Faucet | [faucet.atgraphite.com](https://faucet.atgraphite.com) | Get testnet tokens |
 | Status | [status.graphite.xyz](https://status.graphite.xyz) | Network status and metrics |
 
 ## 🎓 Learning Resources
 
 - [Graphite Architecture Overview](https://docs.atgraphite.com)
 - [Smart Contract Development Guide](https://docs.atgraphite.com/build-on-graphite/how-to-deploy-smart-contracts-using-hardhat-a-step-by-step-guide)
-  
 
 ## 👨‍💻 Community
 
-- [Discord]( http://discord.gg/k6kNNeQGv7) - Ask questions and meet other developers
+Join our growing community of developers:
+
+- [Discord](http://discord.gg/k6kNNeQGv7) - Ask questions and meet other developers
 - [Twitter](https://X.com/GraphiteNetwork) - Latest updates and announcements
-- [Foundation](t.me/graphitenetwork) - Technical discussions and proposals
+- [Foundation](https://t.me/graphitenetwork) - Technical discussions and proposals
 
 ## 🤝 Contributing
 
-We welcome contributions to this developer hub! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+We welcome contributions to this developer hub! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
 
 ## 📜 License
 
-This repository is licensed under [MIT](LICENSE).
+This repository is licensed under the [MIT License](LICENSE).

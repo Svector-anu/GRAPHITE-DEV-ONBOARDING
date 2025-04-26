@@ -6,7 +6,7 @@
 
 ## 👋 Welcome
 
-Welcome to the Graphite Network Developer Hub! This repository provides essential tools, guides, and resources to help you quickly start building on the Graphite ecosystem. Whether you're an experienced blockchain developer or just beginning your journey, this hub will equip you with everything you need.
+Welcome to the Graphite Network Developer Hub This repository provides essential tools, guides, and resources to help you quickly start building on the Graphite ecosystem. Whether you're an experienced blockchain developer or just beginning your journey, this hub will equip you with everything you need.
 
 ## 🚀 Quick Start
 

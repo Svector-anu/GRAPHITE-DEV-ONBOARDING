@@ -119,7 +119,7 @@ graphite-dev-hub/
 | Documentation | [docs.atgraphite.com](https://docs.atgraphite.com) | Official developer documentation |
 | Block Explorer | [test.atgraphite.com](https://test.atgraphite.com) | Search transactions, blocks, and addresses |
 | Faucet | [faucet.atgraphite.com](https://faucet.atgraphite.com) | Get testnet tokens |
-| Status | [status.graphite.xyz](atgraphite.com/marketing-staking-program) | Network status and metrics |
+| Status | [TBA](atgraphite.com/marketing-staking-program) | Network status and metrics |
 
 ## 🎓 Learning Resources
 

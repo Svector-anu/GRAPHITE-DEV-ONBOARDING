@@ -1,143 +1,236 @@
-# Graphite Network Developer Hub
+# 🚀 Graphite Dev Starter Kit — All-in-One Trust-First SDK & Network Guide
+
+> The official all-in-one starter kit for building **trust-first decentralized applications** on the Graphite Network using the `@atgraphite/web3-plugin`.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen)](https://nodejs.org/)
+[![Web3.js](https://img.shields.io/badge/Web3.js-Compatible-blue)](https://web3js.org/)
+
+---
 
 <div align="center">
-  <h3>Everything you need to start building on Graphite Network</h3>
+  <h3>✅ Connect to Graphite • 🧱 Build Trust-First dApps • 🚀 Ship Real Products</h3>
 </div>
+
+---
 
 ## 👋 Welcome
 
-Welcome to the Graphite Network Developer Hub This repository provides essential tools, guides, and resources to help you quickly start building on the Graphite ecosystem. Whether you're an experienced blockchain developer or just beginning your journey, this hub will equip you with everything you need.
+Welcome to the Graphite Dev Starter Kit — your all-in-one hub for building decentralized applications with built-in trust and reputation systems.
 
-## 🚀 Quick Start
+Instead of treating all users equally, your dApps can make intelligent decisions based on verified identity and trust scores.
 
-### 1. Connect to Graphite Network
+Whether you're a beginner, a hackathon builder, or a team going into production, this repo gives you everything you need to launch powerful dApps on Graphite.
 
-Add Graphite Network to your wallet using these network details:
+---
 
-| Setting | Value |
-|---------|-------|
-| Network Name | Graphite Testnet |
-| RPC URL | https://anon-entrypoint-test-1.atgraphite.com |
-| Chain ID | 54170 |
-| Currency Symbol | @G |
-| Block Explorer | test.atgraphite.com |
+## ⚙️ Network Setup (Graphite Testnet)
+
+### ✅ Add Graphite Network to MetaMask
+
+| Setting          | Value                                              |
+|------------------|----------------------------------------------------|
+| **Network Name** | Graphite Testnet                                   |
+| **RPC URL**      | https://anon-entrypoint-test-1.atgraphite.com     |
+| **Chain ID**     | 54170                                              |
+| **Currency**     | @G                                                 |
+| **Explorer**     | https://test.atgraphite.com                        |
 
 <details>
-<summary>📱 Step-by-step MetaMask Guide</summary>
+<summary>📱 Step-by-step MetaMask Setup</summary>
 
-1. Open MetaMask and click on the network dropdown at the top
-2. Select "Add Network"
-3. Click "Add Network Manually"
-4. Fill in the network details above
-5. Click "Save"
+1. Open MetaMask and click the network dropdown  
+2. Click **Add Network**
+3. Choose **Add Network Manually**
+4. Fill in the details above
+5. Click **Save**
 </details>
 
-### 2. Get Test Tokens
+---
 
-You'll need @G tokens to interact with the network:
+### 🪙 Get Test Tokens
 
-- Visit the [Graphite Faucet](https://faucet.atgraphite.com)
-- Enter your wallet address
-- Receive test @G tokens directly to your wallet
+You’ll need @G tokens to interact with Graphite Testnet.
 
-### 3. Set Up Your Development Environment
+- 💧 Visit the [Graphite Faucet](https://faucet.atgraphite.com)
+- Paste your wallet address
+- Receive free test tokens
 
-Clone this repository and install dependencies:
+---
+
+## 🔧 Development Environment
+
+### Setup Instructions
 
 ```bash
-git clone https://github.com/graphite-network/graphite-network-setup.git
-cd graphite-network-setup
-cp .env.example .env
+# 1. Clone the repository
+git clone https://github.com/your-org/graphite-dev-starter-kit.git
+cd graphite-dev-starter-kit
+
+# 2. Install dependencies
 npm install
+
+# 3. Set up environment variables
+cp .env.example .env
+# Edit .env with your API keys (instructions included in file)
+
+# 4. Run the lending app example
+node examples/lending-app.js
+
+# 5. Run the marketplace app example  
+node examples/marketplace-app.js
 ```
 
-Edit your `.env` file:
+---
 
+## 📁 Project Structure
+
+```bash
+graphite-dev-starter-kit/
+├── src/
+│   └── GraphiteClient.js          # Core client powered by Web3.js and @atgraphite/web3-plugin
+├── examples/
+│   ├── lending-app.js             # Trust-based lending demo
+│   └── marketplace-app.js         # Seller verification demo
+├── .env.example                   # Pre-configured environment template
+├── package.json                   # Dependencies and scripts
+└── README.md                      # You are here!
 ```
-PRIVATE_KEY=your_private_key
-GRAPHITE_RPC_URL=https://anon-entrypoint-test-1.atgraphite.com
+
+---
+
+## 🔧 Environment Setup
+
+Your `.env` file should include:
+
+```env
+# Wallet configuration
+PRIVATE_KEY=your_private_key_here
+
+# Graphite network endpoints
+GRAPHITE_NODE_URL=https://anon-entrypoint-test-1.atgraphite.com
+GRAPHITE_API_URL=https://api.main.atgraphite.com/api
+
+# Optional: Custom contract addresses
+LENDING_CONTRACT_ADDRESS=0x...
+MARKETPLACE_CONTRACT_ADDRESS=0x...
 ```
 
-> 🔒 **Security Note:** Never commit your private key to GitHub or share it publicly
+> 🔒 **Security Note:** Never commit your private key to GitHub or share it publicly.
 
-## 🧰 Developer Tools
+---
 
-### Code Examples
+## 💡 Trust-First dApp Examples
 
-#### Connect using Viem
+### 🏦 Trust-Based Lending App
 
 ```javascript
-import { createPublicClient, http } from 'viem'
-import { graphiteTestnet } from './chains'
+// Run: node examples/lending-app.js
+const graphite = new GraphiteClient();
 
-const client = createPublicClient({
-  chain: graphiteTestnet,
-  transport: http(process.env.GRAPHITE_RPC_URL),
-})
-
-// Now you can use client to interact with Graphite Network
-const blockNumber = await client.getBlockNumber()
-console.log(`Current block: ${blockNumber}`)
-```
-
-#### Connect using ethers.js
-
-```javascript
-import { ethers } from 'ethers'
-
-const provider = new ethers.JsonRpcProvider(process.env.GRAPHITE_RPC_URL)
-
-// Basic interaction
-async function getNetwork() {
-  const network = await provider.getNetwork()
-  console.log(`Connected to: ${network.name} (Chain ID: ${network.chainId})`)
+// Check borrower's trust score before approving loan
+const borrower = await graphite.getUser('0x...');
+if (borrower.trustScore > 750) {
+    // Approve loan with favorable terms
+    console.log('✅ Loan approved - high trust score');
+} else {
+    // Request additional collateral or deny
+    console.log('⚠️ Additional verification required');
 }
-
-getNetwork()
 ```
 
-### Project Structure
+---
 
-This repository is organized as follows:
+### 🛒 Marketplace with Seller Verification
 
+```javascript  
+// Run: node examples/marketplace-app.js
+const graphite = new GraphiteClient();
+
+// Verify seller before listing expensive items
+const seller = await graphite.getUser('0x...');
+const isVerified = await graphite.isKYCVerified(seller.address);
+
+if (isVerified && seller.trustScore > 600) {
+    console.log('✅ Verified seller - can list high-value items');
+} else {
+    console.log('📝 Basic seller - limited to small transactions');
+}
 ```
-graphite-dev-hub/
-├── README.md           # This guide
-├── examples/           # Code examples for different languages/frameworks
-│   ├── viem/           # Viem.sh examples
-│   ├── ethers/         # Ethers.js examples
-│   └── wagmi/          # Wagmi hooks examples
-├── contracts/          # Sample smart contracts for Graphite
-├── scripts/            # Helper scripts for common tasks
-└── utils/              # Utility functions and configurations
-```
 
-## 📊 Network Resources
+---
+
+## 🎓 Learning Goals
+
+By working through this starter kit, you'll learn:
+
+- **Trust Integration**: How to query and use trust scores in your dApp logic
+- **KYC Verification**: Implementing identity checks without storing personal data
+- **Risk Assessment**: Building algorithms that adapt to user reputation
+- **Web3 Best Practices**: Clean patterns for blockchain application development
+- **Graphite Network**: Understanding the trust layer and its capabilities
+
+---
+
+## 📚 Developer Resources
 
 | Resource | URL | Description |
 |----------|-----|-------------|
-| Documentation | [docs.atgraphite.com](https://docs.atgraphite.com) | Official developer documentation |
-| Block Explorer | [test.atgraphite.com](https://test.atgraphite.com) | Search transactions, blocks, and addresses |
-| Faucet | [faucet.atgraphite.com](https://faucet.atgraphite.com) | Get testnet tokens |
-| Status | [TBA](atgraphite.com/marketing-staking-program) | Network status and metrics |
+| Documentation | https://docs.atgraphite.com/ | Official developer documentation |
+| Block Explorer | https://test.atgraphite.com | Search transactions, blocks, and addresses |
+| Faucet | https://faucet.atgraphite.com | Get testnet tokens |
+| Plugin | https://www.npmjs.com/package/@atgraphite/web3-plugin | Official Web3 SDK |
 
-## 🎓 Learning Resources
-
-- [Graphite Architecture Overview](https://docs.atgraphite.com)
-- [Smart Contract Development Guide](https://docs.atgraphite.com/build-on-graphite/how-to-deploy-smart-contracts-using-hardhat-a-step-by-step-guide)
-
-## 👨‍💻 Community
-
-Join our growing community of developers:
-
-- [Discord](http://discord.gg/k6kNNeQGv7) - Ask questions and meet other developers
-- [Twitter](https://X.com/GraphiteNetwork) - Latest updates and announcements
-- [Foundation](https://t.me/graphitenetwork) - Technical discussions and proposals
+---
 
 ## 🤝 Contributing
 
-We welcome contributions to this developer hub! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
+We welcome contributions from the community!
+
+### 💡 What to Contribute
+
+- New trust-first dApp examples  
+- Documentation improvements  
+- Dev utilities or CLI tools  
+- Testing scripts or deployment helpers  
+
+### 📦 How to Contribute
+
+1. **Fork** the repository  
+2. **Create** a feature branch: `git checkout -b feature/amazing-feature`  
+3. **Add** your example or improvement  
+4. **Test** your changes with both example apps  
+5. **Commit** with clear messages: `git commit -m 'Add: new trust scoring example'`  
+6. **Push** to your branch: `git push origin feature/amazing-feature`  
+7. **Open** a Pull Request
+
+---
+
+## 👨‍👩‍👧‍👦 Support & Community
+
+- 📖 **Docs**: https://docs.atgraphite.com  
+- 💬 **Discord**: https://discord.gg/k6kNNeQGv7  
+- 🚀 **Telegram**: https://t.me/+Fwq1LXJqf2Q1ZWE0  
+- 🐦 **Twitter**: https://twitter.com/GraphiteNetwork  
+- 📧 **Email**: support@graphite.com  
+
+---
 
 ## 📜 License
 
-This repository is licensed under the [MIT License](LICENSE).
+This repository is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+## 🙌 Acknowledgments
+
+- Built on the robust foundation of **Web3.js**
+- Powered by **Graphite Network**'s trust infrastructure
+- Inspired by the amazing **Web3 developer community**
+
+---
+
+**Want help, updates, or to connect with other builders?**  
+👉 [Join the Graphite Developer Community on Telegram](https://t.me/+Fwq1LXJqf2Q1ZWE0)
+
+Or check out our [documentation](https://docs.atgraphite.com) to start building today!

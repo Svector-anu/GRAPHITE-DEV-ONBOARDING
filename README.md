@@ -1,4 +1,4 @@
-# 🚀 Graphite Dev Starter Kit — All-in-One Trust-First SDK & Network Guide
+#  Graphite Dev Starter Kit — All-in-One Trust-First SDK & Network Guide
 
 > The official all-in-one starter kit for building **trust-first decentralized applications** on the Graphite Network using the `@atgraphite/web3-plugin`.
 

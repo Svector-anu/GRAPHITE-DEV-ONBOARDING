@@ -125,7 +125,7 @@ MARKETPLACE_CONTRACT_ADDRESS=0x...
 ### 🏦 Trust-Based Lending App
 
 ```javascript
-// Run: node examples/lending-app.js
+// Run: node ending-app.js
 const graphite = new GraphiteClient();
 
 // Check borrower's trust score before approving loan
@@ -144,7 +144,7 @@ if (borrower.trustScore > 750) {
 ### 🛒 Marketplace with Seller Verification
 
 ```javascript  
-// Run: node examples/marketplace-app.js
+// Run: node marketplace-app.js
 const graphite = new GraphiteClient();
 
 // Verify seller before listing expensive items
